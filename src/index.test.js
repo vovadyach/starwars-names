@@ -32,6 +32,7 @@ describe('starwars-names', function() {
       expect(randomItems).to.have.length(3);
       randomItems.forEach(function (item) {
         expect(starWars.all).to.include(item);
+
       });
     });
   });
