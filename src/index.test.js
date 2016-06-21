@@ -1,6 +1,7 @@
 /**
  * Created by vinside on 6/17/16.
  */
+
 import {expect} from 'chai';
 import starWars from './index';
 
