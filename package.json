@@ -4,8 +4,8 @@
   "description": "Get a random Star Wars names",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rimraf dist && mkdirp dist && babel src --out-dir dist",
-    "build": "babel src/index.js -o dist/index.js",
+    "build": "rimraf dist && mkdirp dist && babel src --out-dir dist",
+    "__build": "babel src/index.js -o dist/index.js",
     "postbuild": "cp src/starwars-names.json dist/starwars-names.json",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements >= 80% --branches >= 80% --functions >= 80% --lines >= 80%",
