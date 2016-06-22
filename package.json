@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "prebuild": "rm -rf dist && mkdir dist",
-    "build": "/home/vinside/aFrontEndCourse/02lesson/starwars-names/node_modules/babel-cli/bin/babel.js src/index.js -o dist/index.js",
+    "build": "./node_modules/.bin/babel src/index.js -o dist/index.js",
     "postbuild": "cp src/starwars-names.json dist/starwars-names.json",
     "commit": "git-cz",
     "check-coverage": "istanbul check-coverage --statements >= 80% --branches >= 80% --functions >= 80% --lines >= 80%",
