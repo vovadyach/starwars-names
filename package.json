@@ -4,7 +4,7 @@
   "description": "Get a random Star Wars names",
   "main": "dist/index.js",
   "scripts": {
-    "prebuild": "rm -rf dist && mkdir dist",
+    "prebuild": "rimraf dist && mkdirp dist && babel src --out-dir dist",
     "build": "babel src/index.js -o dist/index.js",
     "postbuild": "cp src/starwars-names.json dist/starwars-names.json",
     "commit": "git-cz",
@@ -12,10 +12,9 @@
     "test": "mocha src/*.test.js -w --compilers js:babel-register",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel-register",
     "report-coverage": "cat './coverage/lcov.info' | codecov",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
-  },
-  "bin": {
-    "istanbul": "./node_modules/istanbul/lib/cli.js"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "babel-core": "latest"
+
   },
   "repository": {
     "type": "git",
