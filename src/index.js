@@ -1,7 +1,7 @@
 import uniqueRandomArray from 'unique-random-array';
 import starWarsNames from './starwars-names.json';
 
-var getRandomItem = uniqueRandomArray(starWarsNames);
+let getRandomItem = uniqueRandomArray(starWarsNames);
 
 module.exports = {
   all: starWarsNames,
