@@ -14,7 +14,7 @@ function random(number) {
   } else {
     let randomItems = [];
     for (let i = 0; i < number; i++) {
-      randomItems.push(getRandomItem());
+      randomItems.push( getRandomItem() );
     }
     return randomItems;
   }

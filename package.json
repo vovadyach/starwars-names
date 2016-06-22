@@ -8,11 +8,14 @@
     "build": "babel src/index.js -o dist/index.js",
     "postbuild": "cp src/starwars-names.json dist/starwars-names.json",
     "commit": "git-cz",
-    "check-coverage": "istanbul check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "test": "mocha src/index.test.js -w --compilers js:babel-register",
+    "check-coverage": "istanbul check-coverage --statements >= 80% --branches >= 80% --functions >= 80% --lines >= 80%",
+    "test": "mocha src/*.test.js -w --compilers js:babel-register",
     "test:single": "istanbul cover -x *.test.js _mocha -- -R spec src/index.test.js --compilers js:babel-register",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
+    "report-coverage": "cat './coverage/lcov.info' | codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+  },
+  "bin": {
+    "istanbul": "./node_modules/istanbul/lib/cli.js"
   },
   "repository": {
     "type": "git",
@@ -46,9 +49,9 @@
     "cz-conventional-changelog": "1.1.6",
     "ghooks": "1.2.4",
     "install": "0.8.1",
-    "istanbul": "0.4.3",
+    "isparta": "4.0.0",
+    "istanbul": "1.0.0-alpha.2",
     "mocha": "2.5.3",
-    "nyc": "6.6.1",
     "semantic-release": "^4.3.5",
     "webpack": "1.13.1"
   },
@@ -59,11 +62,5 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "babel": {
-    "presets": [
-      "es2015",
-      "stage-2"
-    ]
   }
 }
